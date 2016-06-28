@@ -1,8 +1,11 @@
+@galaxymenagerie: My less exciting brother @galaxymenagerie
 gravitational wave: space ripple
 cosmology: universe story
 cosmological: universe
 supernova: whizz-bang
 supernova: star pop
+supernovae: star pops
+astrophysics: space works
 astrophysical: space workings
 sun: hot plasma ball
 star: far away hot plasma ball
@@ -15,12 +18,14 @@ galaxies: star clubs
 coronal: sun's plasma blancket
 telescope: far-looker
 cosmic: spacey
+plasma: hot space stuff
 jupiter: the big planet
 moon: pal
 moons: pals
 exoplanet: far-off space things
 spectroscopy: rainbow-watching
 dark matter: mystery stuff
+dark energy: very mysterious stuff
 magnetic field: magical field
 magnetosphere: magicsphere
 vortex: swirly
@@ -52,6 +57,32 @@ dynamics:twitchings
 binary star:Tatooine
 largest:fattest
 observations:sly glances
+flare: gas spark
+survey: sneaky scouting
+phenomena: happening times
+phenomenon: happening time
+experimental: fiddling about
+ethanol: strong drink
+astronomer: astrologer
+astronomers: astrologers
+astronomy: astrology
+astronomical: astrological
+astrology: astronomy
+astrological: astronomical
+facilities: places to do stuff
+complex: tricky
+virtual reality: funny glasses
+education: teachin'
+method: ways of doin'
+international: all-over-the-place
+outreach: talkin' to the normal folk
+MHD: plasma maths
+carbon: charcoal
+science: poking around
+heating: gentle warming
+universe: star warehouse
+spectrum: rainbow
+LIGO: laser gun
 Mercury:Hg
 Venus:Venus Williams
 Earth:Soil
