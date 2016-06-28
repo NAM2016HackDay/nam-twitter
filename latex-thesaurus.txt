@@ -1,1 +1,3 @@
-M_{\\odot} : suns
+M_{\odot} : suns
+M_\odot: suns
+R_{\odot} : suns
