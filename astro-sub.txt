@@ -3,6 +3,7 @@ cosmology: universe story
 cosmological: universe
 supernova: whizz-bang
 supernova: star pop
+supernovae: star pops
 astrophysical: space workings
 sun: hot plasma ball
 star: far away hot plasma ball
@@ -15,6 +16,7 @@ galaxies: star clubs
 coronal: sun's plasma blancket
 telescope: far-looker
 cosmic: spacey
+plasma: hot space stuff
 jupiter: the big planet
 moon: pal
 moons: pals

@@ -1,5 +1,5 @@
 import tweepy
-import arxiv
+#import arxiv
 from credentials import *
 import re
 import json
@@ -105,7 +105,8 @@ class ReplyToTweet(StreamListener):
             tweetText = tweet.get('text')
 
             chatResponse = conv.sub(tweetText) #chatbot.respond(tweetText)
-
+            if tweetText == chatResponse:
+                chatResponse = "That looks pretty good already!"
             replyText = '@' + screenName + ' ' + chatResponse
 
             #check if repsonse is over 140 char
