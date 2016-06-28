@@ -1,3 +1,4 @@
+import sys
 import tweepy
 from zoo_credentials import *
 import random
@@ -82,7 +83,14 @@ class ReplyToTweet(StreamListener):
 
 
     def on_data(self, data):
-#        try:
+        if data is not None:
+            try:
+                self.process_data(data)
+            except: # catch *all* exceptions
+                print(sys.exc_info()[0])
+
+
+    def process_data(self, data):
         print data
         tweet = json.loads(data.strip())
 
@@ -94,8 +102,6 @@ class ReplyToTweet(StreamListener):
             tweetText = tweet.get('text')
             if not tweetText.startswith('RT'):
                 self.process_tweet(tweet)
-#        except:
-#            pass
 
 
     def process_tweet(self, tweet):

@@ -1,3 +1,4 @@
+import sys
 import tweepy
 #import arxiv
 from credentials import *
@@ -92,6 +93,13 @@ class ReplyToTweet(StreamListener):
 
     
     def on_data(self, data):
+        if data is not None:
+            try:
+                self.process_data(data)
+            except: # catch *all* exceptions
+                print(sys.exc_info()[0])
+
+    def process_data(self, data):
         #print data
         tweet = json.loads(data.strip())
         
