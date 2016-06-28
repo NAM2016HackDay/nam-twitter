@@ -51,4 +51,19 @@ what are:what the hell are
 dynamics:twitchings
 binary star:Tatooine
 largest:fattest
-observations:sly glances 
+observations:sly glances
+Mercury:Hg
+Venus:Venus Williams
+Earth:Soil
+Mars:Mars Bar
+Jupiter:The Boss Planet
+Saturn:the one with the rings
+Uranus:Urrectum
+Neptune:Poseidon
+Pluto:Crap planet
+asteroid:planet piece
+simulation:photoshopping
+supermassive:really really big
+Gamma-ray:death ray
+particle:little blob
+magnetic:magical
