@@ -92,22 +92,24 @@ class ReplyToTweet(StreamListener):
 
     
     def on_data(self, data):
-        print data
+        #print data
         tweet = json.loads(data.strip())
         
         retweeted = tweet.get('retweeted')
         from_self = tweet.get('user',{}).get('id_str','') == "747714424732024832" #account_user_id
-        print tweet.get('user',{}).get('id_str','')
+        #print tweet.get('user',{}).get('id_str','')
         if retweeted is not None and not retweeted and not from_self:
 
             tweetId = tweet.get('id_str')
             screenName = tweet.get('user',{}).get('screen_name')
             tweetText = tweet.get('text')
-
+            tweetText = tweetText.replace("@nambot2016","")
             chatResponse = conv.sub(tweetText) #chatbot.respond(tweetText)
-            if tweetText == chatResponse:
-                chatResponse = "That looks pretty good already!"
-            replyText = '@' + screenName + ' ' + chatResponse
+            if tweetText.lower() == chatResponse.lower():
+                chatResponse = "@{} That looks pretty good already!".format(screenName)
+                replyText =  chatResponse
+            else:
+                replyText =  chatResponse + ' @' + screenName
 
             #check if repsonse is over 140 char
             if len(replyText) > 140:
