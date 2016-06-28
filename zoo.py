@@ -85,7 +85,8 @@ class ReplyToTweet(StreamListener):
         print data
         tweet = json.loads(data.strip())
 
-        retweeted = tweet.get('retweeted')
+        tweetText = tweet.get('text')
+        retweeted = tweet.get('retweeted') or tweetText.startswith('RT')
         reply = tweet.get('in_reply_to_status_id')
         from_self = tweet.get('user',{}).get('id_str','') == "747807887658000384" #account_user_id
         print tweet.get('user',{}).get('id_str','')
@@ -93,7 +94,6 @@ class ReplyToTweet(StreamListener):
 
             tweetId = tweet.get('id_str')
             screenName = tweet.get('user',{}).get('screen_name')
-            tweetText = tweet.get('text')
 
             tweetText = tweetText.replace('@GalaxyMenagerie', '').replace('@galaxymenagerie', '').strip()[:40]
             if len(tweetText) == 0:
