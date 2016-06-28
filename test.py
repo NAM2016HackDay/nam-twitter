@@ -2,21 +2,40 @@ import tweepy
 import arxiv
 from credentials import *
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
 
-api = tweepy.API(auth)
+class Twitter():
+    """
+    An object to interact with the Twitter API in the simple way that we need.
 
+    """
+    def __init__(self):
+        """
+        Authenticates the Python script against the Twitter auth API, and
+        sets up the object.
+        """
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(access_token, access_token_secret)
+        self.api = tweepy.API(auth)
 
+    def tweet(self, string):
+        """
+        Send a string to Twitter.
+        """
+        selt.api.update_status(string)
 
+class ArxivQuery():
+    """
+    Query the Arxiv for abstracts.
+    """
+        
+    #s = "GW150914"
+    
+    def query(self):
+        return arxiv.query(s, prune=True, start=0, max_results=10)
 
-s = "GW150914"
-
-results = arxiv.query(s, prune=True, start=0, max_results=10)
-
-for result in results:
-    api.update_status(result['title'][:140])
-    print result['title'][:140]
+#for result in results:
+#   #
+#  print result['title'][:140]
 
 
 
