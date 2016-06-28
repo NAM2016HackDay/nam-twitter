@@ -33,3 +33,24 @@ solar system: Earth friendzone
 strong lensing: light bending
 atmosphere: air-bubble
 atmospheres: air-bubbles
+solar:sunny
+serendipitous:totally random
+detailed:well thorough
+predictions:wild guesses
+model:vague idea
+modelling:concocting vague ideas
+insights:confusing claims
+understanding:misunderstanding
+modified:fudged
+testing:breaking
+searching:frantically searching
+minor:boring
+fundamental:vaguely important
+results:spurious claims
+dark energy:fictional nonsense
+high redshift:far far away
+what are:what the hell are
+dynamics:twitchings
+binary star:Tatooine
+largest:fattest
+observations:sly glances 
