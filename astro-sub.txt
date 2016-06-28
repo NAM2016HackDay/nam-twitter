@@ -1,3 +1,4 @@
+@galaxymenagerie: My less exciting brother @galaxymenagerie
 gravitational wave: space ripple
 cosmology: universe story
 cosmological: universe
@@ -68,7 +69,6 @@ astronomy: astrology
 astronomical: astrological
 astrology: astronomy
 astrological: astronomical
-@galaxymenagerie: My less exciting brother @galaxymenagerie
 facilities: places to do stuff
 complex: tricky
 virtual reality: funny glasses
@@ -83,3 +83,18 @@ heating: gentle warming
 universe: star warehouse
 spectrum: rainbow
 LIGO: laser gun
+Mercury:Hg
+Venus:Venus Williams
+Earth:Soil
+Mars:Mars Bar
+Jupiter:The Boss Planet
+Saturn:the one with the rings
+Uranus:Urrectum
+Neptune:Poseidon
+Pluto:Crap planet
+asteroid:planet piece
+simulation:photoshopping
+supermassive:really really big
+Gamma-ray:death ray
+particle:little blob
+magnetic:magical

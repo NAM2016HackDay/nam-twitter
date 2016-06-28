@@ -96,10 +96,16 @@ class ReplyToTweet(StreamListener):
         tweet = json.loads(data.strip())
         
         retweeted = tweet.get('retweeted')
-        from_self = tweet.get('user',{}).get('id_str','') == "747714424732024832" #account_user_id
+        reply = tweet.get('in_reply_to_user_id')
+        if reply != "null":
+            reply=True
+        else:
+            reply=False
+        #print tweet
+        from_self = tweet.get('user',{}).get('id_str','') == account_user_id
         #print tweet.get('user',{}).get('id_str','')
-        if retweeted is not None and not retweeted and not from_self:
-
+        if retweeted is not None and not retweeted and not from_self:# and not reply:
+            
             tweetId = tweet.get('id_str')
             screenName = tweet.get('user',{}).get('screen_name')
             tweetText = tweet.get('text')
