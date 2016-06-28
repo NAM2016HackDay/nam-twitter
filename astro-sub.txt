@@ -4,4 +4,30 @@ cosmological: universe
 supernova: whizz-bang
 supernova: star pop
 astrophysical: space workings
-
+sun: hot plasma ball
+star: far away hot plasma ball
+stars: far away hot plasma balls
+planet: blobby space thing
+planets: blobby space things
+planetary: blobby space thing-related
+galaxy: star club
+galaxies: star clubs
+coronal: sun's plasma blancket
+telescope: far-looker
+cosmic: spacey
+jupiter: the big planet
+moon: pal
+moons: pals
+exoplanet: far-off space things
+spectroscopy: rainbow-watching
+dark matter: mystery stuff
+magnetic field: magical field
+magnetosphere: magicsphere
+vortex: swirly
+quasar: far-away blinkey
+redshift: far-awayness
+photosphere: bright-bit
+solar system: Earth friendzone
+strong lensing: light bending
+atmosphere: air-bubble
+atmospheres: air-bubbles
