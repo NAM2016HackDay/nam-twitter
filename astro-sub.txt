@@ -15,7 +15,7 @@ planets: blobby space things
 planetary: blobby space thing-related
 galaxy: star club
 galaxies: star clubs
-coronal: sun's plasma blancket
+coronal: sun's plasma blanket
 telescope: far-looker
 cosmic: spacey
 plasma: hot space stuff
@@ -105,3 +105,4 @@ oscillations:wobbles
 surveys:questionnaires
 science:mucking about
 field:meadow
+flaring: plasma-popping
