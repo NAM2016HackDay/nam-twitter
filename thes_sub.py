@@ -32,7 +32,7 @@ words = sys.argv[1].split()
 for word in words:
     if not word in xkcd:
        try:
-          sub_list = dictionary.synonym(word)#corpus[word]
+          sub_list = corpus[word]
 	  
 	  for item in sub_list:
 	     if item in xkcd:
