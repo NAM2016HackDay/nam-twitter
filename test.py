@@ -21,7 +21,10 @@ class Twitter():
         """
         Send a string to Twitter.
         """
-        selt.api.update_status(string)
+        if len(string)>140:
+            print "This string is too long, and it will be truncated to fit on Twitter."
+            
+        selt.api.update_status(string[:140])
 
 class ArxivQuery():
     """
