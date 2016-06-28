@@ -82,48 +82,56 @@ class ReplyToTweet(StreamListener):
 
 
     def on_data(self, data):
+#        try:
         print data
         tweet = json.loads(data.strip())
 
-        tweetText = tweet.get('text')
-        retweeted = tweet.get('retweeted') or tweetText.startswith('RT')
+        retweeted = tweet.get('retweeted')
         reply = tweet.get('in_reply_to_status_id')
         from_self = tweet.get('user',{}).get('id_str','') == "747807887658000384" #account_user_id
         print tweet.get('user',{}).get('id_str','')
         if retweeted is not None and not retweeted and not from_self and not reply:
+            tweetText = tweet.get('text')
+            if not tweetText.startswith('RT'):
+                self.process_tweet(tweet)
+#        except:
+#            pass
 
-            tweetId = tweet.get('id_str')
-            screenName = tweet.get('user',{}).get('screen_name')
 
-            tweetText = tweetText.replace('@GalaxyMenagerie', '').replace('@galaxymenagerie', '').strip()[:40]
-            if len(tweetText) == 0:
-                tweetText = "nothing"
+    def process_tweet(self, tweet):
+        tweetText = tweet.get('text')
+        tweetId = tweet.get('id_str')
+        screenName = tweet.get('user',{}).get('screen_name')
 
-            success, img, galaxyText = conv.select_galaxy(tweetText.lower())
+        tweetText = tweetText.replace('@GalaxyMenagerie', '').replace('@galaxymenagerie', '').strip()[:40]
+        if len(tweetText) == 0:
+            tweetText = "nothing"
 
-            if success:
-                replyText = 'This is the galaxy which looks most like a {}'.format(tweetText)
-            else:
-                replyText = "There's no {}, but here's ".format(tweetText)
-                replyText += 'the galaxy which looks most like a {}'.format(galaxyText)
+        success, img, galaxyText = conv.select_galaxy(tweetText.lower())
 
-            maxlen = (109 - len(screenName))
-            if len(replyText) > maxlen:
-                replyText = replyText[0:maxlen] + '...'
+        if success:
+            replyText = 'This is the galaxy which looks most like a {}'.format(tweetText)
+        else:
+            replyText = "There's no {}, but here's ".format(tweetText)
+            replyText += 'the galaxy which looks most like a {}'.format(galaxyText)
 
-            replyText += ' @' + screenName
+        maxlen = (109 - len(screenName))
+        if len(replyText) > maxlen:
+            replyText = replyText[0:maxlen] + '...'
 
-            #check if response is over 140 char
+        replyText += ' @' + screenName
 
-            print('Tweet ID: ' + tweetId)
-            print('From: ' + screenName)
-            print('Tweet Text: ' + tweetText)
-            print('Reply Text: ' + replyText)
+        #check if response is over 140 char
 
-            filename = os.path.join('galaxies/', img)
+        print('Tweet ID: ' + tweetId)
+        print('From: ' + screenName)
+        print('Tweet Text: ' + tweetText)
+        print('Reply Text: ' + replyText)
 
-            # If rate limited, the status posts should be queued up and sent on an interval
-            self.api.update_with_media(filename, status=replyText, in_reply_to_status_id=tweetId)
+        filename = os.path.join('galaxies/', img)
+
+        # If rate limited, the status posts should be queued up and sent on an interval
+        self.api.update_with_media(filename, status=replyText, in_reply_to_status_id=tweetId)
 
 
     def on_error(self, status):
