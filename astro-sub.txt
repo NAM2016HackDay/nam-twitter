@@ -67,3 +67,8 @@ supermassive:really really big
 Gamma-ray:death ray
 particle:little blob
 magnetic:magical
+cluster:herd
+massive:mahoosive
+dark:spooky
+oscillations:wobbles
+surveys:questionnaires
