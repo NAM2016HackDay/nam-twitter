@@ -1,4 +1,4 @@
-import sys
+import sys, re
 import random
 def parse_dictionary(file):
     myvars = {}
@@ -6,7 +6,7 @@ def parse_dictionary(file):
         for line in myfile:
             name, var = line.partition(":")[::2]
 	    
-            myvars[name.strip()] = var.split(',')
+            myvars[name.strip()] = var.rstrip()#.split(',')
     return myvars
 
 def parse_list(file):
@@ -19,18 +19,24 @@ def parse_list(file):
            #myvars[name.strip()] = var.split(',')
     return myvars
 
-from PyDictionary import PyDictionary
-dictionary=PyDictionary()
+def multiple_replace(dict, text):
+  # Create a regular expression  from the dictionary keys
+    #multiples = re.findall(r"\$(.*)\$",  text)
+    regex = re.compile("(%s)" % "|".join(map(re.escape, dict.keys())))
+    #ret = []
+    # For each match, look-up corresponding value in dictionary
+    #for text in multiples:
+    return regex.sub(lambda mo: dict[mo.string[mo.start():mo.end()]], text) 
+    #return ret
 
-corpus = parse_dictionary("astro-sub.txt")
+    
+astro_replace = parse_dictionary("astro-sub.txt")
 
-#print xkcd[0:10]
+my_string="Supernova is a funny word."
+my_string = sys.argv[1]
 
-#print str(sys.argv[1])
+for k, v in astro_replace.iteritems():
+    my_string = my_string.lower().replace(k, v)
 
-words = sys.argv[1].split()
-for i in xrange(len(words)):
-    if words[i] in corpus:
-          words[i] = random.choice(corpus[words[i]])
+print my_string
 
-print words

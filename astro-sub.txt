@@ -1,5 +1,7 @@
-gravitational wave: space ripple, 
-cosmology: universe story,
-cosmological: universe storytime
-supernova: whizz-bang, star pop
+gravitational wave: space ripple
+cosmology: universe story
+cosmological: universe
+supernova: whizz-bang
+supernova: star pop
+astrophysical: space workings
 
