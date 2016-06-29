@@ -91,13 +91,13 @@ class ReplyToTweet(StreamListener):
 
 
     def process_data(self, data):
-        print data
+        #print data
         tweet = json.loads(data.strip())
 
         retweeted = tweet.get('retweeted')
         reply = tweet.get('in_reply_to_status_id')
         from_self = tweet.get('user',{}).get('id_str','') == "747807887658000384" #account_user_id
-        print tweet.get('user',{}).get('id_str','')
+        #print tweet.get('user',{}).get('id_str','')
         if retweeted is not None and not retweeted and not from_self and not reply:
             tweetText = tweet.get('text')
             if not tweetText.startswith('RT'):
@@ -129,10 +129,10 @@ class ReplyToTweet(StreamListener):
 
         #check if response is over 140 char
 
-        print('Tweet ID: ' + tweetId)
-        print('From: ' + screenName)
-        print('Tweet Text: ' + tweetText)
-        print('Reply Text: ' + replyText)
+        #print('Tweet ID: ' + tweetId)
+        #print('From: ' + screenName)
+        #print('Tweet Text: ' + tweetText)
+        #print('Reply Text: ' + replyText)
 
         filename = os.path.join('galaxies/', img)
 
