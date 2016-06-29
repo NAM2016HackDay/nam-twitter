@@ -4,9 +4,8 @@ import tweepy
 from credentials import *
 import re
 import json
-
+from collections import OrderedDict
 from tweepy import Stream
-
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 
@@ -31,16 +30,16 @@ class Twitter():
         """
         if len(string)>140:
             print "This string is too long, and it will be truncated to fit on Twitter."
-            
+
         selt.api.update_status(string[:140])
 
 class ArxivQuery():
     """
     Query the Arxiv for abstracts.
     """
-        
+
     #s = "GW150914"
-    
+
     def query(self):
         return arxiv.query(s, prune=True, start=0, max_results=10)
 
@@ -56,13 +55,14 @@ class Converter():
         return self.multiple_replace(self.astro_replace, string)
 
     def parse_dictionary(self, file):
-        myvars = {}
+        # TODO: allow multiple, randomly-chosen substitutions
+        myvars = OrderedDict()  # ensure substitutions occur in order
         with open(file) as myfile:
             for line in myfile:
                 name, var = line.partition(":")[::2]
                 myvars[name.strip()] = " ".join(var.rsplit())
         return myvars
-            
+
     def multiple_replace(self, dict, text):
         # # Create a regular expression  from the dictionary keys
         # multiples = re.findall(r"\$(.*)\$",  text)
@@ -91,7 +91,7 @@ class ReplyToTweet(StreamListener):
         auth.set_access_token(access_token, access_token_secret)
         self.api = tweepy.API(auth)
 
-    
+
     def on_data(self, data):
         if data is not None:
             try:
@@ -102,7 +102,7 @@ class ReplyToTweet(StreamListener):
     def process_data(self, data):
         #print data
         tweet = json.loads(data.strip())
-        
+
         retweeted = tweet.get('retweeted')
         reply = tweet.get('in_reply_to_user_id')
         if reply != "null":
@@ -113,7 +113,7 @@ class ReplyToTweet(StreamListener):
         from_self = tweet.get('user',{}).get('id_str','') == account_user_id
         #print tweet.get('user',{}).get('id_str','')
         if retweeted is not None and not retweeted and not from_self:# and not reply:
-            
+
             tweetId = tweet.get('id_str')
             screenName = tweet.get('user',{}).get('screen_name')
             tweetText = tweet.get('text')
