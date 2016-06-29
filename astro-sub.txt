@@ -1,4 +1,6 @@
 @galaxymenagerie: My less exciting brother @galaxymenagerie
+plasma: hot space stuff
+field:meadow
 gravitational wave: space ripple
 cosmology: universe story
 cosmological: universe
@@ -19,7 +21,6 @@ galaxy: star club
 coronal: sun's plasma blanket
 telescope: far-looker
 cosmic: spacey
-plasma: hot space stuff
 jupiter: the big planet
 moon: pal
 moons: pals
@@ -65,7 +66,6 @@ phenomenon: happening time
 experimental: fiddling about
 ethanol: strong drink
 astronomer: astrologer
-astronomer: space starer
 astronomer: space photographer
 astronomers: astrologers
 astronomy: astrology
@@ -109,7 +109,6 @@ dark:spooky
 oscillations:wobbles
 surveys:questionnaires
 science:mucking about
-field:meadow
 flaring: plasma-popping
 spiral: swirly
 elliptical: roundish
@@ -153,3 +152,8 @@ bayesian: hippie
 theoretical: made-up
 analysing: looking at
 starburst: plasma-ball-megafactory
+imf: plasma ball bigness
+variation: changing
+molecular: lumpy-particle
+atomic: lonely-particle
+ultraviolet: ultraindigo
