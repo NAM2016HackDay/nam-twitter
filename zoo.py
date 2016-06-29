@@ -56,6 +56,7 @@ class Converter():
                         if self.dictionary[i][1] < prob:
                             self.dictionary[i] = [gal_id,prob]
 
+    self.pretty_dictionary = {}
     with open('pretty_galaxies.txt','r') as r:
         for line in r:
             data = line.split('\t')
