@@ -104,7 +104,7 @@ class ReplyToTweet(StreamListener):
         tweet = json.loads(data.strip())
 
         retweeted = tweet.get('retweeted')
-        reply = tweet.get('in_reply_to_user_id')
+        reply = tweet.get('in_reply_to_status_id')
         #print tweet
         from_self = tweet.get('user',{}).get('id_str','') == account_user_id
         #print tweet.get('user',{}).get('id_str','')
