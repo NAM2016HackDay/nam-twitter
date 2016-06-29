@@ -56,25 +56,6 @@ class Converter():
                         if self.dictionary[i][1] < prob:
                             self.dictionary[i] = [gal_id,prob]
 
-        pretty_dictionary = {}
-        with open('pretty_galaxies.txt','r') as r:
-            for line in r:
-                data = line.split('\t')
-                gal_id = int(data[0])
-                strings = data[1].split(', ')
-                prob = float(data[2])
-                for i in strings:
-                        if i not in pretty_dictionary:
-                                pretty_dictionary[i] = [gal_id,prob]
-                        else:
-                                if pretty_dictionary[i][1] < prob:
-                                        pretty_dictionary[i] = [gal_id,prob]
-
-        for i in self.dictionary.keys():
-                if i in pretty_dictionary.keys():
-                        if pretty_dictionary[i][1] > 0.5*self.dictionary[i][1]:
-                                self.dictionary[i] = [pretty_dictionary[i][0],pretty_dictionary[i][1]]
-
 
     def select_galaxy(self, text):
         text = text.lower()
