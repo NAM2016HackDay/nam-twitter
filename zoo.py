@@ -100,7 +100,7 @@ class ReplyToTweet(StreamListener):
         #print tweet.get('user',{}).get('id_str','')
         if retweeted is not None and not retweeted and not from_self and not reply:
             tweetText = tweet.get('text')
-            if not tweetText.startswith('RT'):
+            if tweetText.lower().startswith('@galaxymenagerie') and not tweetText.startswith('RT'):
                 self.process_tweet(tweet)
 
 

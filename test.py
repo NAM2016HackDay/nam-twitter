@@ -105,37 +105,38 @@ class ReplyToTweet(StreamListener):
 
         retweeted = tweet.get('retweeted')
         reply = tweet.get('in_reply_to_user_id')
-        if reply != "null":
-            reply=True
-        else:
-            reply=False
         #print tweet
         from_self = tweet.get('user',{}).get('id_str','') == account_user_id
         #print tweet.get('user',{}).get('id_str','')
-        if retweeted is not None and not retweeted and not from_self:# and not reply:
-
-            tweetId = tweet.get('id_str')
-            screenName = tweet.get('user',{}).get('screen_name')
+        if retweeted is not None and not retweeted and not from_self and not reply:
             tweetText = tweet.get('text')
-            tweetText = tweetText.replace("@nambot2016","")
-            chatResponse = conv.sub(tweetText) #chatbot.respond(tweetText)
-            if tweetText.lower() == chatResponse.lower():
-                chatResponse = "@{} That looks pretty good already!".format(screenName)
-                replyText =  chatResponse
-            else:
-                replyText =  chatResponse + ' @' + screenName
+            if tweetText.lower().startswith('@nambot2016') and not tweetText.startswith('RT'):
+                self.process_tweet(tweet)
 
-            #check if repsonse is over 140 char
-            if len(replyText) > 140:
-                replyText = replyText[0:137] + '...'
+    def process_tweet(self, tweet):
+        tweetText = tweet.get('text')
+        tweetId = tweet.get('id_str')
+        screenName = tweet.get('user',{}).get('screen_name')
+        tweetText = tweetText.replace("@nambot2016","").replace("@NAMbot2016","")
+        tweetText = tweetText.replace("@NAMBOT2016","")
+        chatResponse = conv.sub(tweetText) #chatbot.respond(tweetText)
+        if tweetText.lower() == chatResponse.lower():
+            chatResponse = "@{} That looks pretty good already!".format(screenName)
+            replyText =  chatResponse
+        else:
+            replyText =  chatResponse + ' @' + screenName
 
-            print('Tweet ID: ' + tweetId)
-            print('From: ' + screenName)
-            print('Tweet Text: ' + tweetText)
-            print('Reply Text: ' + replyText)
+        #check if repsonse is over 140 char
+        if len(replyText) > 140:
+            replyText = replyText[0:137] + '...'
 
-            # If rate limited, the status posts should be queued up and sent on an interval
-            self.api.update_status(status=replyText, in_reply_to_status_id=tweetId)
+        print('Tweet ID: ' + tweetId)
+        print('From: ' + screenName)
+        print('Tweet Text: ' + tweetText)
+        print('Reply Text: ' + replyText)
+
+        # If rate limited, the status posts should be queued up and sent on an interval
+        self.api.update_status(status=replyText, in_reply_to_status_id=tweetId)
 
     def on_error(self, status):
         print status
