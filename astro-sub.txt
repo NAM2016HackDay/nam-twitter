@@ -89,6 +89,10 @@ heating: gentle warming
 universe: star warehouse
 spectrum: rainbow
 spectral: rainbow
+multiwavelength: rainbow
+multi-wavelength: rainbow
+multiband: colourful
+multi-band: colourful
 LIGO: laser gun
 Mercury:Hg
 Venus:Venus Williams
@@ -105,6 +109,8 @@ supermassive:really really big
 Gamma-ray:death ray
 particle:little blob
 magnetic:magical
+protoclusters: baby herds
+protocluster: baby herd
 cluster:herd
 massive:mahoosive
 dark:spooky
@@ -165,3 +171,4 @@ agn: star club boombox
 cmb: cosmic wallpaper
 dusty: grubby
 dustiness: grubbiness
+heliosphere: sun surface
