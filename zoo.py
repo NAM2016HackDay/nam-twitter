@@ -118,7 +118,7 @@ class ReplyToTweet(StreamListener):
         reply = tweet.get('in_reply_to_status_id')
         from_self = tweet.get('user',{}).get('id_str','') == "747807887658000384" #account_user_id
         #print tweet.get('user',{}).get('id_str','')
-        if retweeted is not None and not retweeted and not from_self and not reply:
+        if retweeted is not None and not retweeted and not from_self: # and not reply:
             tweetText = tweet.get('text')
             if tweetText.lower().startswith('@galaxymenagerie') and not tweetText.startswith('RT'):
                 self.process_tweet(tweet)
