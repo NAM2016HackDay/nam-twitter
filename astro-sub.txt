@@ -35,7 +35,9 @@ quasar: far-away blinkey
 redshift: far-awayness
 photosphere: bright-bit
 solar system: Earth friendzone
-strong lensing: light bending
+strong lensing: light-bending
+strong-lensing: light-bending
+strong lens: light-bender
 atmosphere: air-bubble
 atmospheres: air-bubbles
 solar:sunny
@@ -143,8 +145,6 @@ decomposition: squidging
 measuring: guessing
 measurements: guesses
 measurement: guess
-agn: star club boombox
-cmb: cosmic wallpaper
 quenching: squishing
 formation: making
 bimodality: double-bumpiness
@@ -152,8 +152,16 @@ bayesian: hippie
 theoretical: made-up
 analysing: looking at
 starburst: plasma-ball-megafactory
-imf: plasma ball bigness
+initial mass function: plasma ball bigness
 variation: changing
 molecular: lumpy-particle
 atomic: lonely-particle
 ultraviolet: ultraindigo
+components: bits
+component: bit
+compact: teeny
+imf: plasma ball bigness
+agn: star club boombox
+cmb: cosmic wallpaper
+dusty: grubby
+dustiness: grubbiness
