@@ -109,6 +109,10 @@ supermassive:really really big
 Gamma-ray:death ray
 particle:little blob
 magnetic:magical
+magnetohydrodynamics:magical splishy sploshy
+mhd:magical splishy sploshy
+hydrodynamics:splishy sploshy
+hydrodynamic:splishy sploshy
 protoclusters: baby herds
 protocluster: baby herd
 cluster:herd
